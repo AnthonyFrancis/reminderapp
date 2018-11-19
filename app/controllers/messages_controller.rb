@@ -89,7 +89,7 @@ class MessagesController < ApplicationController
     # SMS message
     def deliver message
       response = nexmo.send_message(
-        from: message.from,
+        from: current_user.phone_number,
         to: message.to,
         text: message.text
       )
