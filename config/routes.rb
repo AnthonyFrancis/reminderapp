@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :messages
   devise_for :users
   root "messages#index"
+  get "home" => "pages#home"
   
   # SMS routes
   resources :outbound_sms,          only: [:index, :create]
