@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_19_152444) do
+ActiveRecord::Schema.define(version: 2018_11_19_160133) do
 
   create_table "calls", force: :cascade do |t|
     t.string "to"
@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(version: 2018_11_19_152444) do
     t.string "status"
     t.boolean "is_inbound"
     t.string "conversation_uuid"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "to"
+    t.string "from"
   end
 
   create_table "sms", force: :cascade do |t|
