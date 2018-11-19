@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_19_160133) do
+ActiveRecord::Schema.define(version: 2018_11_19_163540) do
 
   create_table "calls", force: :cascade do |t|
     t.string "to"
@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 2018_11_19_160133) do
     t.datetime "updated_at", null: false
     t.string "to"
     t.string "from"
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "sms", force: :cascade do |t|
