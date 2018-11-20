@@ -3,6 +3,10 @@
 <p>
   <strong>Text:</strong>
   <%= @message.text %>
+  <br>
+  <br>
+  <strong>Published At:</strong>
+  <%= @message.published_at %>
 </p>
 
 <%= link_to 'Edit', edit_message_path(@message) %> |
