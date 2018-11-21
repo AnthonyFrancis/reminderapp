@@ -1,0 +1,1 @@
+scheduleworker: bundle exec sidekiq
