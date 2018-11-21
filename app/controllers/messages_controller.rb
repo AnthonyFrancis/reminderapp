@@ -29,8 +29,8 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
-        
-        deliver @message
+        #deliver @message
+        ScheduleWorker.perform_async(@message.id)
         format.html { redirect_to @message, notice: 'Message was successfully created.' }
         format.json { render :show, status: :created, location: @message }
       else
@@ -104,7 +104,5 @@ class MessagesController < ApplicationController
         #  message_id: response['messages'].first['message-id']
         #)
       #end
-
-
     end
 end

@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
+  require 'sidekiq/web'
+  
   resources :messages
   devise_for :users
   root "messages#index"
   get "home" => "pages#home"
+  mount Sidekiq::Web, at: '/sidekiq'
+
   
   # SMS routes
   resources :outbound_sms,          only: [:index, :create]

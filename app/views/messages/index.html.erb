@@ -36,18 +36,6 @@
     </tr>
   </thead>
 
-<h3>Drafts</h3>
-<% current_user.messages.draft.each do |message| %>
-  <tr>
-    <td><%= message.text %></td>
-    <td><%= link_to 'Show', message %></td>
-    <td><%= link_to 'Edit', edit_message_path(message) %></td>
-    <td><%= link_to 'Cancel', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
- </tbody>
-</table>
-
 <h3>Queue</h3>
 
 <table>
