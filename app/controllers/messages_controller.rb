@@ -30,7 +30,7 @@ class MessagesController < ApplicationController
     respond_to do |format|
       if @message.save
         #deliver @message
-        ScheduleWorker.perform_async(@message.id)
+        ScheduleWorker.perform_at(@message.published_at, @message.id)
         format.html { redirect_to @message, notice: 'Message was successfully created.' }
         format.json { render :show, status: :created, location: @message }
       else
