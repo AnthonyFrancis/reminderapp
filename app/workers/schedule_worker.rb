@@ -20,8 +20,8 @@ class ScheduleWorker
 		# we're using environment variables `NEXMO_API_KEY`
 		# and `NEXMO_API_SECRET`
 		client = Nexmo::Client.new(
-		key: "9fc3fc73Y",
-		secret: "t3ehZXqoXh5kk97i"
+		key: ENV["NEXMO_API_KEY"],
+		secret: ENV["NEXMO_API_SECRET"]
 		)
 	end
 
