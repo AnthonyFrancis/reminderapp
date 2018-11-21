@@ -1,1 +1,1 @@
-scheduleworker: bundle exec sidekiq
+scheduleworker: bundle exec sidekiq -c 2
