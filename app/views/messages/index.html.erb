@@ -1,9 +1,5 @@
 
-
-<h1>Welcome to my app!</h1>
 <% if user_signed_in? %>
-
-          <p id="notice"><%= notice %></p>
 
 <h1>Messages</h1>
 
@@ -83,6 +79,22 @@
           
       <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
      <% else %>
+
+      <h1>Lightweight Text Scheduler</h1>
+      <h2>Never forget to stay in touch with the people that matter to you the most</h2>
+
+      <p>
+        - Schedule reminder messages 
+          <br>
+        - Keep in touch with friends
+         <br>
+        - Schedule birthday texts
+         <br>
+        -  Schedule anniversary messages
+      </p>
+
+
+
        <p>
          <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
